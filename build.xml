@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="fox-content" default="build">
+
+    <record name="logfile.txt" action="start" append="false" />
+
     <target name="build"
             depends="prepare,lint,phploc,pdepend,phpcs,phpmd,phpcpd,phpcb,unit-tests"/>
 
