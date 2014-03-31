@@ -25,7 +25,9 @@
         <server name="KERNEL_DIR" value="/path/to/your/app/" />
     </php>
     -->
-
+    <php>
+        <server name="KERNEL_DIR" value="Tests/app/"/>
+    </php>
     <filter>
         <whitelist>
             <directory>src</directory>
