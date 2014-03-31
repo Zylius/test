@@ -1,5 +1,9 @@
 <?php
+
+namespace Tests{
+
 require_once 'PHPUnit/Autoload.php';
+
 class StackTest extends PHPUnit_Framework_TestCase
 {
     public function testPushAndPop()
@@ -15,4 +19,5 @@ class StackTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(0, count($stack));
     }
 }
-?>
+
+}
