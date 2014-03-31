@@ -51,16 +51,16 @@
     <target name="phploc" description="Measure project size using PHPLOC">
         <exec executable="phploc">
             <arg value="--log-csv"/>
-            <arg value="${basedir}/Tests/app/build/logs/phploc.csv"/>
+            <arg value="${basedir}/Tests/phploc.csv"/>
             <arg path="${basedir}"/>
         </exec>
     </target>
 
     <target name="pdepend" description="Calculate software metrics using PHP_Depend">
         <exec executable="pdepend">
-            <arg value="--jdepend-xml=${basedir}/Tests/app/build/logs/jdepend.xml"/>
-            <arg value="--jdepend-chart=${basedir}/Tests/app/build/pdepend/dependencies.svg"/>
-            <arg value="--overview-pyramid=${basedir}/Tests/app/build/pdepend/overview-pyramid.svg"/>
+            <arg value="--jdepend-xml=${basedir}/Tests/jdepend.xml"/>
+            <arg value="--jdepend-chart=${basedir}/Tests/dependencies.svg"/>
+            <arg value="--overview-pyramid=${basedir}/Tests/overview-pyramid.svg"/>
             <arg value="--ignore=${basedir}/vendor,${basedir}/Tests/"/>
             <arg path="${basedir}"/>
         </exec>
@@ -72,7 +72,7 @@
             <arg path="${basedir}"/>
             <arg value="xml"/>
             <arg value="controversial,unusedcode,design,naming,codesize"/>
-            <arg value="> ${basedir}/Tests/app/build/logs/phpmd.xml"/>
+            <arg value="> ${basedir}/Tests/phpmd.xml"/>
             <arg value="--exclude"/>
             <arg value="vendor,Tests"/>
         </exec>
@@ -83,7 +83,7 @@
         <exec executable="phpcs">
             <arg value="--standard=psr2"/>
             <arg value="--report=checkstyle"/>
-            <arg value="--report-file=Tests/app/build/logs/checkstyle.xml"/>
+            <arg value="--report-file=Tests/checkstyle.xml"/>
             <arg value="--ignore=${basedir}/vendor,${basedir}/Tests/"/>
             <arg path="${basedir}"/>
         </exec>
@@ -92,7 +92,7 @@
     <target name="phpcpd" description="Find duplicate code using PHPCPD">
         <exec executable="phpcpd">
             <arg value="--log-pmd"/>
-            <arg value="${basedir}/Tests/app/build/logs/pmd-cpd.xml"/>
+            <arg value="${basedir}/Tests/pmd-cpd.xml"/>
             <arg value="--exclude"/>
             <arg value="vendor"/>
             <arg value="--exclude"/>
